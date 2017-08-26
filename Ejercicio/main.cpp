@@ -10,15 +10,41 @@ using namespace std;
 //1 min = 60 s
 
 int main(){
-    int x;
+    int anio,mes,dia;
+    int anio2,mes2,dia2;
     int y = 0;
-    cin>>x;
-    if(x%4 == 0 && x%100 != 0 || x%400 == 0){
+    int x = 0;
+
+    cout<<"Primera Fecha: "<<endl;
+
+    cout<<"Dia: ";cin>>dia;
+    while(dia<0 || dia>31){cout<<"Ingrese un Dia valido: ";cin>>dia;}
+    cout<<"Mes: ";cin>>mes;
+    while(mes<0 || mes>12){cout<<"Ingrese un Mes valido: ";cin>>mes;}
+    cout<<"Anio: ";cin>>anio;
+    while(anio<0){cout<<"Ingrese un Anio valido: ";cin>>anio;}
+
+    cout<<"Segunda Fecha: "<<endl;
+
+    cout<<"Dia: ";cin>>dia2;
+    while(dia2<0 || dia2>31){cout<<"Ingrese un Dia valido: ";cin>>dia2;}
+    cout<<"Mes: ";cin>>mes2;
+    while(mes2<0 || mes2>12){cout<<"Ingrese un Mes valido: ";cin>>mes2;}
+    cout<<"Anio: ";cin>>anio2;
+    while(anio2<0){cout<<"Ingrese un Anio valido: ";cin>>anio2;}
+
+    if(anio%4 == 0 && anio%100 != 0 || anio%400 == 0){
         y++;
     }
     if(y==1)cout<<"anio bisiesto"<<endl;
+    else cout<<"No es bisiesto ctmr"<<endl;
+    if(anio2%4 == 0 && anio2%100 != 0 || anio2%400 == 0){
+        x++;
+    }
+    if(x==1)cout<<"anio bisiesto"<<endl;
+    else cout<<"No es bisiesto ctmr"<<endl;
 
-    for(int j=2;j<=1000;j++)
+    /*for(int j=2;j<=1000;j++)
     {
         int a=0;
         for(int i=1;i<=1000;i++)
@@ -28,5 +54,7 @@ int main(){
         }
         if(a==2)
         cout<<j<<endl;
-}
+    }
+    */
+
 }
