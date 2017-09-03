@@ -34,7 +34,14 @@ void multi(int a,int b,int c)
 }
 void inverso(int a,int c)
 {
-
+    for(int b = 0;b < c;b++){
+        int x = (a*b)%c;
+        if(x == 1){
+            cout<<b<<endl;
+            break;
+        }
+        if(b == c-1 && x != 1){cout<<"No existe inverso modular \n";}
+    }
 }
 int main()
 {
@@ -82,8 +89,8 @@ int main()
 
             case '4':
 				system("cls");
-                cout<<"Ingrese 2 numeros: "<<endl;
-                cin>>a;cin>>b;
+                cout<<"Ingrese 1 numero: "<<endl;
+                cin>>a;
                 cout<<"Ingrese el modulo: "<<endl;
                 cin>>c;
                 inverso(a,c);
@@ -98,7 +105,4 @@ int main()
                 suma(a,b,c);
 				break;
 		}
-
-
-
 }
