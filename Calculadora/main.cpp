@@ -36,8 +36,12 @@ void inverso(int a,int c)
 {
     for(int b = 0;b < c;b++){
         int x = (a*b)%c;
+        if(x < 0){
+            x = x + c;
+        }
         if(x == 1){
-            cout<<b<<endl;
+            cout<<"\n";
+            cout<<"Resultado: "<<b<<endl;
             break;
         }
         if(b == c-1 && x != 1){cout<<"No existe inverso modular \n";}
@@ -47,7 +51,6 @@ int main()
 {
     int a,b,c;
     char tecla;
-
         system("cls");
         cout << "                             Calculador Modular v1.0" << endl;
         cout << "                             -----------------------" << endl << endl;
@@ -98,11 +101,6 @@ int main()
 
 			default:
 				system("cls");
-                cout<<"Ingrese 2 numeros: "<<endl;
-                cin>>a;cin>>b;
-                cout<<"Ingrese el modulo: "<<endl;
-                cin>>c;
-                suma(a,b,c);
 				break;
 		}
 }
