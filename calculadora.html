@@ -1,0 +1,39 @@
+<html>
+ <head>
+ <script type="text/javascript">
+   function num(n){
+    calculadora.txt1.value=calculadora.txt1.value+n;
+   }
+   function reset() {
+    document.getElementById("calc").reset();
+}
+ </script>
+ <title>Calculadora</title>
+ <form name=calculadora id="calc" style="border: 4px solid blue; width: 160px;">
+ <input type=text name=txt1 style="text-align:right"><br>
+ <input type=button name=boton7 value=7 onclick="num(boton7.value)">
+ <input type=button name=boton8 value=8 onclick="num(boton8.value)">
+ <input type=button name=boton9 value=9 onclick="num(boton9.value)">
+ <input type=button name=suma value=+ onclick="num(suma.value)">
+ <br>
+ <input type=button name=boton4 value=4 onclick="num(boton4.value)">
+ <input type=button name=boton5 value=5 onclick="num(boton5.value)">
+ <input type=button name=boton6 value=6 onclick="num(boton6.value)">
+ <input type=button name=resta value=- onclick="num(resta.value)">
+ <br>
+ <input type=button name=boton1 value=1 onclick="num(boton1.value)">
+ <input type=button name=boton2 value=2 onclick="num(boton2.value)">
+ <input type=button name=boton3 value=3 onclick="num(boton3.value)">
+ <input type=button name=mult value=* onclick="num(mult.value)">
+ <br>
+ <input type=button name=boton0 value=0 onclick="num(boton0.value)">
+ <input type=button name=punto value=. onclick="num(punto.value)">
+ <input type=button name=igual value== onclick="txt1.value=eval(txt1.value)">
+ <input type=button name=division value=/ onclick="num(division.value)">
+ <input type=button name=division value=C onclick="reset()">
+ </form>
+
+ </head>
+ <body onload="main()">
+ </body>
+</html>
