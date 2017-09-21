@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+var alumno = {
+ "nombre" : "Aeonaxx",
+ "edad" : 1000,
+ "cursos": [
+   {
+     "codigo" : "A34",
+	 "nombre" : "Estructuras Discretas I"
+   },
+   {
+    "codigo" : "E22",
+    "nombre" : "Inteligencia Artificial"
+   },
+    {
+    "codigo" : "D32",
+    "nombre" : "Programación"
+   }
+ ],
+ "direccion" : {
+   "tipo": "Calle"
+ }
+};
+
+function verResultado() {
+  var out = document.getElementById("output");
+  var table = document.createElement("TABLE");
+  var trNombre = document.createElement("TR");
+  var trEdad = document.createElement("TR");
+  var trCursos = document.createElement("TR");
+
+  table.border = "1";
+
+  var td1 = document.createElement("TD");
+  var td2 = document.createElement("TD");
+  td1.innerText = "Nombres:";
+  td2.innerText = alumno.nombre;
+  trNombre.appendChild(td1);
+  trNombre.appendChild(td2);
+
+  td1 = document.createElement("TD");
+  td2 = document.createElement("TD");
+  td1.innerText = "Edad: ";
+  td2.innerText = alumno.edad;
+  trEdad.appendChild(td1);
+  trEdad.appendChild(td2);
+
+  td1 = document.createElement("TD");
+  td2 = document.createElement("TD");
+  td1.innerText = "Cursos: ";
+  var ulCursos = document.createElement("UL");
+  for(var i=0;i<alumno.cursos.length;i++)
+  {
+    var liCurso = document.createElement("LI");
+    var button = document.createElement("button");
+    button.innerText = "x";
+    
+    liCurso.innerHTML = alumno.cursos[i].nombre;
+    liCurso.appendChild(button);
+    ulCursos.appendChild(liCurso);
+
+  }
+  td2.appendChild(ulCursos);
+  trCursos.appendChild(td1);
+  trCursos.appendChild(td2);
+
+
+
+  table.appendChild(trNombre);
+  table.appendChild(trEdad);
+  table.appendChild(trCursos);
+  //out.innerHTML = "";
+  out.appendChild(table);
+
+}
+  </script>
+
+ </head>
+
+ <body>
+   <button onclick="verResultado()">Datos</button>
+   <div id="output" style="margin: 15px; padding: 5px;"></div>
+    <form name=curso id="cur" style="border: 3px solid grey; width: 160px;">
+    Código: 
+  <input type=text name=txt1 style="text-align:left"><br>
+  Nombre:   
+  <input type=text name=txt1 style="text-align:left"><br><br>
+  <button onclick="guardar()">Guardar</button>
+  <script>
+    function guardar() 
+    {
+      
+    }
+  </script>
+  <button onclick="reset()">Cancelar</button>
+  <script>
+    function reset()
+    {
+      document.getElementById("cur").reset();
+    }
+  </script>
+ </body>
+</html>
