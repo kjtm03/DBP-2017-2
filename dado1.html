@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+</head>
+	<script>
+		var a = Math.floor(Math.random()*6+1);
+		var b = Math.floor(Math.random()*6+1);
+		var x = a>b?a:b;
+		
+		function random1()
+		{
+			var cuad2 = [0,0,0,0,0,0,0,0,0];
+			//a = Math.floor(Math.random()*6+1);
+			document.getElementById("ran1").innerHTML = a;
+			calcular(cuad2,a);
+			pintar1(cuad2);
+
+		}
+		function random2()
+		{
+			var cuad = [0,0,0,0,0,0,0,0,0];
+			//b = Math.floor(Math.random()*6+1);
+			document.getElementById("ran2").innerHTML = b;
+			calcular(cuad,b);
+			pintar2(cuad);
+			ganador();
+		}
+		function ganador()
+		{
+			if(a>b){
+				document.getElementById("res").innerHTML = "Gano Jugador 1";
+			}
+			else{
+			document.getElementById("res").innerHTML = "Gano Jugador 2";}
+			if(a==b){
+				document.getElementById("res").innerHTML = "Empate";
+			}
+		}
+		
+		function calcular(items, valor) {
+		  switch(valor) {
+		  	case 1:
+		      items[4] = 1;
+		      break;
+		    case 2:
+		      items[3] = 1;
+		      items[5] = 1;
+		      break;
+		    case 3:
+		      items[0] = 1;
+		      items[4] = 1;
+		      items[8] = 1;
+		      break;
+		    case 4:
+		      items[0] = 1;
+		      items[2] = 1;
+		      items[6] = 1;
+		      items[8] = 1;
+		      break;
+		    case 5:
+		      items[0] = 1;
+		      items[2] = 1;
+		      items[4] = 1;
+		      items[6] = 1;
+		      items[8] = 1;
+		      break;
+		    case 6:
+		      items[0] = 1;
+		      items[2] = 1;
+		      items[3] = 1;
+		      items[5] = 1;
+		      items[6] = 1;
+		      items[8] = 1;
+		      break;
+		  }
+		}
+
+		//var s = document.write(String.fromCharCode(240));}
+		var m = String.fromCharCode(248);
+		function pintar1(items) {
+		  for (var i=0; i<9; i++) {
+		    var celda = document.getElementById(i);
+		    celda.innerHTML = items[i] ? m : "";
+		  }
+		}
+		function pintar2(cuad) {
+		  for (var j=0; j<9; j++) {//? no funciona de 9 a 18
+		    var celda = document.getElementById(j);
+		    celda.innerHTML = cuad[j] ? "#" : "";
+		  }
+		}
+		
+	</script>
+<style>
+
+	table
+	{
+		font-family: Trebuchet;
+		border-collapse: ;
+		width: 8%;
+		}
+	td
+	 {
+		border: 1px solid black;
+		text-align: center;
+		padding: 8px;
+	}
+</style>
+
+<body>
+	<table>
+		<tr>
+			<td id="0"></td>
+			<td id="1"></td>
+			<td id="2"></td>
+		</tr>
+		<tr>
+			<td id="3"></td>
+			<td id="4"></td>
+			<td id="5"></td>
+		</tr>
+			<tr>
+			<td id="6"></td>
+			<td id="7"></td>
+			<td id="8"></td>
+		</tr>
+	</table><br><br>
+	<button onclick="random1()">Jugador 1</button><br><br>
+	<p id="ran1">Numero Random</p><br><br>
+
+	<button onclick="random2()">Jugador 2</button><br><br>
+	<!--<table>
+		<tr>
+			<td id="9"></td>
+			<td id="10"></td>
+			<td id="11"></td>
+		</tr>
+		<tr>
+			<td id="12"></td>
+			<td id="13"></td>
+			<td id="14"></td>
+		</tr>
+			<tr>
+			<td id="15"></td>
+			<td id="16"></td>
+			<td id="17"></td>
+		</tr>
+	</table>
+	No aparece nada si no se usa nros del 0 al 9 en la segunda tabla	-->
+	<p id="ran2">Numero Random</p><br><br>
+	<p id="res">Resultado</p>
+
+</body>
+</html>
