@@ -6,28 +6,33 @@
     <meta charset="utf-8">
     <link type="text/css" href="raios.css" rel="stylesheet">
 </head>
-
+<script type="text/javascript">
+	function enviar(){
+		document.getElementById("ch").innerHTML = "Hola prro";
+			
+	}
+</script>
 <body>
 <div class="chatbox">
 	<div class="chatlogs">
 
 		<div class ="chat friend">
 			<div class="user-photo"><img src="usuario1.jpg"></div>
-			<p class="chat-message">Waddub</p>
+			<p class="chat-message">Carrrlll</p>
 		</div>
 		<div class ="chat self">
-			<div class="user-photo"><img src="usuario2.jpg"></div>
-			<p class="chat-message">Hey</p>
+			<div class="user-photo"><img src="carl.png"></div>
+			<p id="ch"class="chat-message">Hey</p>
 		</div >
 		<div class ="chat friend">
 			<div class="user-photo"><img src="usuario1.jpg"></div>
-			<p class="chat-message">Ne</p>
+			<p class="chat-message">q haces Carrlll</p>
 		</div>
 		
 	</div>
-	<div class="chat-form">
+	<div id="chat-form"class="chat-form">
 		<textarea></textarea>
-		<button>Send</button>
+		<button onclick="enviar()">Enviar</button>
 	</div>
 </div>
 

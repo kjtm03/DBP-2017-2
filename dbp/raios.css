@@ -63,7 +63,7 @@ body {
 	background: #1adda3;
 }
 .self .chat-message{
-	background: #1ddced;
+	background: #2E9AFE;
 	order: -1;
 }
 .chat-form {
@@ -90,7 +90,7 @@ body {
 }
 .chat-form textarea::-webkit-scrollbar-thumb {
 	border-radius: 5px;
-	background: rgba(0,0,0,.1);
+	background: rgba(0,0,0,1);
 }
 .chat-form button {
 	background: #2E9AFE;
@@ -109,4 +109,4 @@ body {
 }
 .chat-from button:hover {
 	background: #2E9AFE;
-}
+}	
