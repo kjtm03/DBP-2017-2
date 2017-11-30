@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<title>Registro</title>
+<link rel="stylesheet" type="text/css" href="estilos2.css">
+<style type="text/css">
+	#resultado{
+		display: none; /* Hace que el objeto no aparezca en pantalla al iniciar*/
+	}
+
+</style>
+</head>
+ 
+ <script>
+var alumnosPorCodigo = {};
+
+function verificarUsuario() {
+	var usuario = {
+
+		"nickname": jQuery("#login_nickname").val(),
+		"password": jQuery("#login_password").val()
+	};
+
+	jQuery.ajax({method: "POST", url: "login.php", data: JSON.stringify(usuario), dataType: 'text'}).done(function( responseText ) {
+	alert(responseText);
+	location.href ="chat.html";
+	/*//
+	if(){
+			//location.href ="chat.html";
+	}else{
+
+	}
+//		location.href = "chat.html";
+	*/});
+}
+
+function registrarNuevoUsuario() {
+	$("#resultado").css("display", "block"); //Llamanto al atributo para que aparezca 
+	
+  var usuario = {
+	"password": jQuery("#password").val(),
+	"nombres":  jQuery("#nombres").val(),
+	"apellidos":  jQuery("#apellidos").val()
+  };
+  jQuery.ajax({method: "POST", 
+  	             url: "registrar.php",
+  	            data: JSON.stringify(usuario),
+  	        dataType: 'text'}).done(function( responseText ) {
+  	        	$("#resultado").html(responseText);
+  	        	location.href ="index.html";
+  	        	 //Equivalente al getElementById
+  	        //alert(responseText);
+	//Post se diferencia del GET, ya que el GET te pasa los datos atraves de la URL
+  });
+}
+</script>
+</head>
+
+<body>
+
+ <!--<h3>Registro de Usuario</h3>
+ <table id="nuevo-alumno" border="1">
+  <tr><td>Nombres</td><td><input id="nombres" /></td></tr>
+  <tr><td>Apellidos</td><td><input id="apellidos" /></td></tr>
+  <tr><td>Password</td><td><input type="password" id="password" /></td></tr>
+ </table>
+ <button onclick="registrarNuevoUsuario()">Registrar</button>
+  <p>
+ 	Ya tiene cuenta? <a href="index.html">Ingresar</a>
+ </p>
+ 	<div class="alert alert-danger" id = "resultado"></div>
+
+</body>-->
+<div class="header"><h2>Registrarse</h2></div>
+
+	<form method="POST" id="nuevo-alumno" action="index.html">
+		<div class="input">
+			<label>Nombre</label>
+			<input type="text" id="nombres">
+		</div>	
+		<br>
+		<div class="input">
+			<label>Apellidos</label>
+			<input type="text" id="apellidos">
+		</div>	
+		<br>
+		<div class="input">
+			<label>Contraseña</label>
+			<input type="password" id="password">
+		</div>
+		<br>
+		<div class="input">
+			<button type="submit" onclick="registrarNuevoUsuario()">Iniciar Sesión</button>
+		</div>
+		<p>
+			Ya tiene cuenta? <a href="index.html">Iniciar Sesión</a>
+		</p>
+	</form>
+</body>
+
+</html>
