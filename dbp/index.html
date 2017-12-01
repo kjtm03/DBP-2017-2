@@ -27,15 +27,16 @@ function verificarUsuario() {
 	};
 
 	jQuery.ajax({method: "POST", url: "login.php", data: JSON.stringify(usuario), dataType: 'text'}).done(function( responseText ) {
-	alert(responseText);
+	//alert(responseText);
 	location.href ="chat.html";
 	
-	/*if(){
+	if(responseText=='true'){
 		location.href ="chat.html";
 	}
 	else{
-		location.href = "chat.html";
-	}*/
+
+		location.href = "index.html";
+	}
 	
 	});
 }

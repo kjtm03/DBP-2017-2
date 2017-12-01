@@ -18,13 +18,13 @@ $sql = "INSERT INTO usuarios (nombre, apellido, contrasenha) ";
 
 $result = $conn->query($sql);
 
-if ($result === TRUE) {
-	echo "Se ha registrado correctamente :D";
+if ($result == TRUE) {
+	echo "Se ha registrado correctamente";
 	//echo '{"codigo": "' . $data["codigo"] . '"}';
 	//echo '{"Nigga": "Conexion realizada xd"}';
 }
 else {
-	echo "Error ctmre >:v";
+	echo "Error al registrar";
 	//echo '{"error": "NP"}';
 }
 

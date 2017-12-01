@@ -15,9 +15,10 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 	if($row = $result->fetch_assoc()) {
 
-		echo 'Cuenta conectada papus v;';
-	} else {
-		echo '{"response": "false"}';
+		echo 'true';
+	} 
+	else {
+		echo 'false';
 	}
 
 	$conn->close();
